@@ -7,8 +7,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'landing-page',
-      component: require('@/components/LandingPage').default
+      name: 'count',
+      component: require('@/components/Count/Count.vue').default
     },
     {
       path: '*',
