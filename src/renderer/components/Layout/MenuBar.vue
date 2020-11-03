@@ -1,37 +1,28 @@
 <template>
-  <div id="count">
-    <h1>{{ count }}</h1>
-    <button @click="handleAdd(1)">+1</button>
-    <button @click="handleMinus(1)">-1</button>
-    <button @click="handleAsyncAdd(5)">async +1</button>
+  <div id="appMenuBar">
+    <el-avatar shape="square" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
   </div>
 </template>
 
 <script>
-  import { mapActions, mapMutations, mapState } from 'vuex'
-
   export default {
-    name: 'count',
+    name: 'menuBar',
     computed: {
-      ...mapState('counter', ['count'])
     },
     methods: {
-      ...mapMutations('counter', ['add', 'minus']),
-      ...mapActions('counter', ['asyncAdd']),
-
-      handleAdd: function (num) {
-        this.add(num)
-      },
-      handleMinus: function (num) {
-        this.minus(num)
-      },
-      handleAsyncAdd: function (num) {
-        this.asyncAdd(num)
-      }
     }
   }
 </script>
 
-<style>
+<style lang="scss">
+  #appMenuBar {
+    width: 66px;
+    height: 100vh;
+    background: #29292C;
+    text-align: center;
 
+    .el-avatar {
+      margin-top: 20px;
+    }
+  }
 </style>

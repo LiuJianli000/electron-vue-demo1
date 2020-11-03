@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, BrowserWindow, Menu } from 'electron'
+import { app, BrowserWindow, ipcMain, Menu } from 'electron'
 
 /**
  * Set `__static` path to static files in production
@@ -22,7 +22,8 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     height: 563,
     useContentSize: true,
-    width: 1000
+    width: 1000,
+    frame: false
   })
 
   mainWindow.loadURL(winURL)
@@ -32,6 +33,20 @@ function createWindow () {
   })
 
   Menu.setApplicationMenu(null)
+
+  ipcMain.on('win-min', () => {
+    mainWindow.minimize()
+  })
+  ipcMain.on('win-max', () => {
+    if (mainWindow.isMaximized()) {
+      mainWindow.restore()
+    } else {
+      mainWindow.maximize()
+    }
+  })
+  ipcMain.on('win-close', () => {
+    mainWindow.close()
+  })
 }
 
 app.on('ready', createWindow)

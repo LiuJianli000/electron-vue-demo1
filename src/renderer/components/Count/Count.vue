@@ -2,8 +2,8 @@
   <div id="count">
     <h1>{{ count }}</h1>
     <el-button @click="handleAdd(1)" circle>+1</el-button>
-    <el-button @click="handleMinus(1)" circle>+1</el-button>
-    <el-button @click="handleAsyncAdd(5)" circle>+1</el-button>
+    <el-button @click="handleMinus(1)" circle>-1</el-button>
+    <el-button @click="handleAsyncAdd(5)" circle>async</el-button>
   </div>
 </template>
 

@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-    <div class="appMenuBar">
-
-    </div>
+    <menu-bar></menu-bar>
     <div class="appContainer">
-      <router-view></router-view>
+      <close-op></close-op>
+      <div class="main">
+        <router-view></router-view>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+  import CloseOpVue from './components/Layout/CloseOp.vue'
+  import MenuBarVue from './components/Layout/MenuBar.vue'
+
   export default {
-    name: 'electron-vue'
+    name: 'electron-vue',
+    components: {
+      'close-op': CloseOpVue,
+      'menu-bar': MenuBarVue
+    }
   }
 </script>
 
@@ -31,15 +39,18 @@
     height: 100vh;
     display: flex;
 
-    .appMenuBar {
-      width: 66px;
-      border: 1px solid red;
-      height: 100vh;
-    }
-
     .appContainer {
       width: 100%;
       height: 100vh;
+
+      .main {
+        overflow-y: scroll;
+        height: calc(100vh - 36px);
+
+        &::-webkit-scrollbar {
+          width: 0;
+        }
+      }
     }
   }
 </style>
