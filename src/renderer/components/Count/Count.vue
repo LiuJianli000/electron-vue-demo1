@@ -1,9 +1,9 @@
 <template>
   <div id="count">
     <h1>{{ count }}</h1>
-    <button @click="handleAdd(1)">+1</button>
-    <button @click="handleMinus(1)">-1</button>
-    <button @click="handleAsyncAdd(5)">async +1</button>
+    <el-button @click="handleAdd(1)" circle>+1</el-button>
+    <el-button @click="handleMinus(1)" circle>+1</el-button>
+    <el-button @click="handleAsyncAdd(5)" circle>+1</el-button>
   </div>
 </template>
 
@@ -32,6 +32,21 @@
   }
 </script>
 
-<style>
+<style scoped lang="scss">
+ #count {
+   text-align: center;
+
+   h1 {
+     font-size: 64px;
+     margin-top: 100px;
+   }
+
+   .el-button {
+     margin-top: 50px;
+     height: 60px;
+     width: 60px;
+   }
+ }
+</style>>
 
 </style>
