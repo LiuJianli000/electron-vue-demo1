@@ -8,7 +8,7 @@ export default new Router({
     {
       path: '/',
       name: 'count',
-      component: require('@/components/Count/Count.vue').default
+      component: require('@/pages/Count/Count.vue').default
     },
     {
       path: '*',

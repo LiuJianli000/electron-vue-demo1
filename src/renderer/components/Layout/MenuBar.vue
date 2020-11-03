@@ -16,7 +16,7 @@
 
 <style lang="scss">
   #appMenuBar {
-    width: 66px;
+    width: 70px;
     height: 100vh;
     background: #29292C;
     text-align: center;
