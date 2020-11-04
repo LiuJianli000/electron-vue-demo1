@@ -47,6 +47,4 @@
      width: 60px;
    }
  }
-</style>>
-
 </style>
